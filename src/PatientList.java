@@ -1,83 +1,83 @@
-public class PatientList  {
+import java.nio.file.NotDirectoryException;
 
-    public class Node{
+public class PatientList {
+
+    public class Node {
         Patient info;
         Node next;
 
-        Node(Patient p){
+        Node(Patient p) {
             this.info = p;
             this.next = null;
         }
-
     }
-    private Node head = null;
 
-    public void addPatient(Patient p){
+    Node head;
+
+    void addPatient(Patient p) {
         Node newNode = new Node(p);
 
         if (head == null) {
             head = newNode;
-            System.out.println("Patient added.");
-            return;
-        }
-        Node curr = head;
-        while(curr.next != null){
-            curr = curr.next;
-        }
-        curr.next = newNode;
-        System.out.println("Patient added.");
-    }
-
-    public void removePatient(int id){
-        if (head == null){
-            System.out.println("Patient list is empty.");
-            return;
-        }
-        if(head.info.id == id){
-            head = head.next;
-            System.out.println("Patient ID: " + id + "removed.");
-            return;
-        }
-        Node curr = head;
-        Node prev = null;
-
-        while (curr != null && curr.info.id !=id){
-            prev = curr;
-            curr = curr.next;
-
-        }
-        if ( curr == null){
-            System.out.println("Patient ID: "+ id+"is not exist.");
-            return;
-        }
-        prev.next = curr.next;
-        System.out.println("Patient ID: "+ id+ " removed.");
-    }
-
-    public Patient findPatient(int id){
-        Node curr = head;
-
-        while (curr != null){
-            if(curr.info != null && curr.info.id == id){
-                return  curr.info;
+            System.out.println("Patient added successfully.");
+        } else {
+            Node temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
             }
-            curr = curr.next;
+            temp.next = newNode;
+            System.out.println("Patient added successfully.");
+        }
+    }
+
+    void removePatient(int id) {
+
+        if (head == null) {
+            System.out.println("Patient not found.");
+        } else if (head.info.id == id) {
+            head = head.next;
+            System.out.println("Patient removed successfully.");
+            return;
+        }
+        Node temp = head;
+        Node temp2 = head.next;
+
+        while (temp.next != null && temp.info.id != id) {
+            temp2 = temp;
+            temp = temp.next;
+        }
+        if (temp != null) {
+            temp2.next = temp.next;
+            System.out.println("Patient removed successfully.");
+        } else {
+            System.out.println("Patient not found.");
+        }
+    }
+
+    Patient findPatient(int id) {
+        if (head == null) {
+            return null;
+        }
+        Node temp = head;
+        while (temp != null) {
+            if (temp.info != null && temp.info.id == id) {
+                return temp.info;
+            }
+            temp = temp.next;
         }
         return null;
-
     }
-    public void printList() {
+
+    void printList() {
         if (head == null) {
             System.out.println("List is empty.");
-            return;
         }
-
-        Node curr = head;
-        while (curr != null) {
-            Patient p = curr.info;
-            System.out.println("ID: " + p.id + ", Name: " + p.name + ", Severity: " + p.severity + ", Age: " + p.age);
-            curr = curr.next;
+        Node temp = head;
+        while (temp != null) {
+            System.out.println(temp.info);
+            temp = temp.next;
         }
     }
+
 
 }

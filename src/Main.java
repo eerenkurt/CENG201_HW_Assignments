@@ -22,10 +22,12 @@ public class Main {
         Patient found = pat.findPatient(123);
 
         if (found != null) {
-            System.out.println("Found patient: ID=" + found.id + ", Name=" + found.name);
+            System.out.println("Patient found: " + found);
         } else {
             System.out.println("Patient not found.");
         }
+
+
 
         System.out.println();
 
