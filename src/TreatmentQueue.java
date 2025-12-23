@@ -39,6 +39,7 @@ public class TreatmentQueue {
             System.out.println("The queue is empty");
             return null;
         }
+        System.out.println("The patient removed from the queue");
         TreatmentRequest result = front.request;
         front = front.next;
         size--;
