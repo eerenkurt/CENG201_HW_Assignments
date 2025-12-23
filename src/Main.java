@@ -1,5 +1,10 @@
 public class Main {
     public static void main(String[] args) {
+
+
+        // test for task1
+        System.out.println("************************TASK 1************************");
+
         PatientList pat = new PatientList();
 
         Patient p1 = new Patient(404,"Eren",4,21);
@@ -27,13 +32,12 @@ public class Main {
             System.out.println("Patient not found.");
         }
 
-
-
         System.out.println();
 
         pat.printList();
 
         System.out.println();
+
         System.out.println("************************TASK 2************************");
         System.out.println();
 
@@ -60,12 +64,26 @@ public class Main {
         queue.printQueue();
 
         System.out.println("\nRemaining queue size: " + queue.size());
+
+        System.out.println("************************TASK 3************************");
+
+        DischargeStack stack = new DischargeStack();
+
+        stack.push(new DischargeRecord(101));
+        stack.push(new DischargeRecord(102));
+        stack.push(new DischargeRecord(103));
+        stack.push(new DischargeRecord(104));
+        stack.push(new DischargeRecord(105));
+
+        System.out.println();
+
+        stack.pop();
+        stack.pop();
+
+        System.out.println();
+
+        System.out.println("Remaining Stack: ");
+        stack.printStack();
+
     }
 }
-
-
-
-
-
-
-
