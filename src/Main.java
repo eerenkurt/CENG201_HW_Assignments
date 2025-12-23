@@ -33,7 +33,39 @@ public class Main {
 
         pat.printList();
 
+        System.out.println();
+        System.out.println("************************TASK 2************************");
+        System.out.println();
 
+        TreatmentQueue queue = new TreatmentQueue();
+
+        queue.enqueue(new TreatmentRequest(1, 10));
+        queue.enqueue(new TreatmentRequest(2, 12));
+        queue.enqueue(new TreatmentRequest(3, 14));
+        queue.enqueue(new TreatmentRequest(4, 16));
+        queue.enqueue(new TreatmentRequest(5, 18));
+        queue.enqueue(new TreatmentRequest(6, 20));
+        queue.enqueue(new TreatmentRequest(7, 22));
+        queue.enqueue(new TreatmentRequest(8, 24));
+
+        System.out.println("\n--- Initial Queue ---");
+        queue.printQueue();
+
+        System.out.println("\n--- Processing 3 Treatment Requests ---");
+        queue.dequeue();
+        queue.dequeue();
+        queue.dequeue();
+
+        System.out.println("\n--- Remaining Queue ---");
+        queue.printQueue();
+
+        System.out.println("\nRemaining queue size: " + queue.size());
     }
-
 }
+
+
+
+
+
+
+
