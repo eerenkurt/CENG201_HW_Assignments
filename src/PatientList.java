@@ -19,7 +19,7 @@ public class PatientList {
             head = newNode;
             System.out.println("Patient added successfully.");
         } else {
-            Node temp = head;
+            Node temp = head; //traverse to the end of the list
             while (temp.next != null) {
                 temp = temp.next;
             }
@@ -37,7 +37,7 @@ public class PatientList {
             System.out.println("Patient removed successfully.");
             return;
         }
-        Node temp = head;
+        Node temp = head; //search for the patient in the list
         Node temp2 = head.next;
 
         while (temp.next != null && temp.info.id != id) {

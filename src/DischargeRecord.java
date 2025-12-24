@@ -13,9 +13,4 @@ public class DischargeRecord {
         return "PatientID: " + patientId +
                 ", DischargeTime: " + dischargeTime;
     }
-
-
-
-
-
 }

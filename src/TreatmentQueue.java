@@ -20,7 +20,7 @@ public class TreatmentQueue {
         size = 0;
     }
 
-    void enqueue(TreatmentRequest request) {
+    void enqueue(TreatmentRequest request) { //adds a treatment request to end of the queue
         Node newNode = new Node(request);
         if (isEmpty()) {
             front = newNode;
@@ -40,7 +40,7 @@ public class TreatmentQueue {
             return null;
         }
         System.out.println("The patient removed from the queue");
-        TreatmentRequest result = front.request;
+        TreatmentRequest result = front.request; //removes the front element
         front = front.next;
         size--;
 
@@ -54,7 +54,7 @@ public class TreatmentQueue {
         return size;
     }
 
-    boolean isEmpty() {
+    boolean isEmpty() { //checks if the queue is empty
         return size == 0;
     }
 
