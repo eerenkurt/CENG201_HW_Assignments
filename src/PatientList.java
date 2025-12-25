@@ -77,7 +77,7 @@ public class PatientList {
         }
     }
 
-    public void sortBySeverityDescending() { //bubble sort
+    public void sortBySeverity() { //bubble sort
         if (head == null) {
             return;
         }

@@ -6,24 +6,24 @@ public class DischargeStack {
 
         Node(DischargeRecord r) {
             record = r;
-            next = null; // reference to next node
+            next = null;
         }
     }
 
-    Node top; //top of the stack
+    Node top; //stackin en üstündeki değerii tutar
 
     public DischargeStack() {
         top = null;
     }
-
-    void push(DischargeRecord record) { // it adds new record to the stack
+    //LIFO mantığı var stackte
+    void push(DischargeRecord record) {
         Node newNode = new Node(record);
         newNode.next = top;
         top = newNode;
         System.out.println(record + " Pushed to the stack");
     }
 
-    void pop() { // it removes the top record from the stack
+    void pop() {
         if (isEmpty()) {
             System.out.println("The queue is empty");
         } else {
@@ -32,14 +32,14 @@ public class DischargeStack {
         }
     }
 
-    public DischargeRecord peek() { // it returns the top record
+    public DischargeRecord peek() { //toptakini gösteriyor
         if (isEmpty()) {
             System.out.println("The queue is empty");
         }
         return top.record;
     }
 
-    public void printStack() { // it prints all records in the stack
+    public void printStack() {
         while (!isEmpty()) {
             System.out.println("PatientID: " + top.record.patientId + ", DischargeTime: " + top.record.dischargeTime);
             top = top.next;

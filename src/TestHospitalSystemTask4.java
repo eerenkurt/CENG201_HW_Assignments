@@ -31,6 +31,9 @@ public class TestHospitalSystemTask4 {
 
         system.sortPatientsBySeverity();
 
+        system.addDischargeRecord(131);
+        system.addDischargeRecord(132);
+
         System.out.println();
 
         system.processTreatment();

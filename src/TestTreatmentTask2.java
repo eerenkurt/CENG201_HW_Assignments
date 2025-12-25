@@ -3,14 +3,14 @@ public class TestTreatmentTask2 {
 
         TreatmentQueue queue = new TreatmentQueue();
 
-        queue.enqueue(new TreatmentRequest(123, 10));
-        queue.enqueue(new TreatmentRequest(124, 12));
-        queue.enqueue(new TreatmentRequest(125, 14));
-        queue.enqueue(new TreatmentRequest(126, 16));
-        queue.enqueue(new TreatmentRequest(127, 18));
-        queue.enqueue(new TreatmentRequest(128, 20));
-        queue.enqueue(new TreatmentRequest(129, 22));
-        queue.enqueue(new TreatmentRequest(130, 24));
+        queue.enqueue(new TreatmentRequest(123,false ));
+        queue.enqueue(new TreatmentRequest(124,false ));
+        queue.enqueue(new TreatmentRequest(125,false ));
+        queue.enqueue(new TreatmentRequest(126,false ));
+        queue.enqueue(new TreatmentRequest(127,false ));
+        queue.enqueue(new TreatmentRequest(128,true ));
+        queue.enqueue(new TreatmentRequest(129,true ));
+        queue.enqueue(new TreatmentRequest(130,true ));
 
         System.out.println();
 
