@@ -1,6 +1,6 @@
 public class TreatmentQueue {
 
-    public class Node {
+    private class Node {
         TreatmentRequest request;
         Node next;
 
@@ -19,8 +19,8 @@ public class TreatmentQueue {
         rear = null;
         size = 0;
     }
-
-    void enqueue(TreatmentRequest request) { //adds a treatment request to end of the queue
+    //FIFO mantığı var queuelarda
+    void enqueue(TreatmentRequest request) { //sıranın sonuna ekler
         Node newNode = new Node(request);
         if (isEmpty()) {
             front = newNode;
@@ -40,7 +40,7 @@ public class TreatmentQueue {
             return null;
         }
         System.out.println("The patient removed from the queue");
-        TreatmentRequest result = front.request; //removes the front element
+        TreatmentRequest result = front.request; //baştaki elemanı siler
         front = front.next;
         size--;
 
@@ -54,7 +54,7 @@ public class TreatmentQueue {
         return size;
     }
 
-    boolean isEmpty() { //checks if the queue is empty
+    boolean isEmpty() { //queue boş mu diye bakıyor
         return size == 0;
     }
 
@@ -62,8 +62,7 @@ public class TreatmentQueue {
         Node current = front;
 
         while (current != null) {
-            System.out.println("PatientID: " + current.request.patientID +
-                    ", ArrivalTime: " + current.request.arrivalTime);
+            System.out.println("PatientID: " + current.request.patientID + ", ArrivalTime: " + current.request.arrivalTime);
             current = current.next;
         }
     }

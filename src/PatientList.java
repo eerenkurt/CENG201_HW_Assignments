@@ -1,6 +1,6 @@
 public class PatientList {
 
-    public class Node {
+    private class Node {
         Patient info;
         Node next;
 
@@ -9,8 +9,7 @@ public class PatientList {
             this.next = null;
         }
     }
-
-    Node head;
+    Node head; //düğümün başını tutan
 
     void addPatient(Patient p) {
         Node newNode = new Node(p);
@@ -19,7 +18,7 @@ public class PatientList {
             head = newNode;
             System.out.println("Patient added successfully.");
         } else {
-            Node temp = head; //traverse to the end of the list
+            Node temp = head; //listeyi dolaşır
             while (temp.next != null) {
                 temp = temp.next;
             }
@@ -37,7 +36,7 @@ public class PatientList {
             System.out.println("Patient removed successfully.");
             return;
         }
-        Node temp = head; //search for the patient in the list
+        Node temp = head;
         Node temp2 = head.next;
 
         while (temp.next != null && temp.info.id != id) {
@@ -77,7 +76,7 @@ public class PatientList {
         }
     }
 
-    public void sortBySeverity() { //bubble sort
+    public void sortBySeverity() { //bubble sort kullandım
         if (head == null) {
             return;
         }
