@@ -77,5 +77,24 @@ public class PatientList {
         }
     }
 
+    public void sortBySeverityDescending() { //bubble sort
+        if (head == null) {
+            return;
+        }
+        boolean swapped;
+        do {
+            swapped = false;
+            Node current = head;
+            while (current.next != null) {
+                if (current.info.severity < current.next.info.severity) {
+                    Patient temp = current.info;
+                    current.info = current.next.info;
+                    current.next.info = temp;
+                    swapped = true;
+                }
+                current = current.next;
+            }
+        } while (swapped);
+    }
 
 }

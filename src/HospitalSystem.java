@@ -36,6 +36,10 @@ public class HospitalSystem {
         }
     }
 
+    public void sortPatientsBySeverity() {
+        patientList.sortBySeverityDescending();
+    }
+
     public void printSystemState() {
         System.out.println("Patients:");
         patientList.printList();

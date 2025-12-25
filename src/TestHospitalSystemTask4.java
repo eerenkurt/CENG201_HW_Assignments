@@ -17,18 +17,21 @@ public class TestHospitalSystemTask4 {
 
         System.out.println();
 
-        system.addTreatmentRequest(123, true);
-        system.addTreatmentRequest(124, true);
+        system.addTreatmentRequest(123, false);
+        system.addTreatmentRequest(124, false);
         system.addTreatmentRequest(125, false);
-        system.addTreatmentRequest(126, true);
+        system.addTreatmentRequest(126, false);
         system.addTreatmentRequest(127, false);
 
         system.addTreatmentRequest(128, true);
-        system.addTreatmentRequest(129, false);
+        system.addTreatmentRequest(129, true);
         system.addTreatmentRequest(130, true);
 
         System.out.println();
 
+        system.sortPatientsBySeverity();
+
+        System.out.println();
 
         system.processTreatment();
         system.processTreatment();
@@ -36,7 +39,6 @@ public class TestHospitalSystemTask4 {
         system.processTreatment();
 
         System.out.println();
-
 
         system.printSystemState();
     }
